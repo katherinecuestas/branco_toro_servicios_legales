@@ -1,0 +1,107 @@
+:root{
+  --primary:#0f766e; --secondary:#0ea5e9; --bg:#f8fafc; --text:#0f172a;
+  --muted:#475569; --card:#ffffff; --ring:#22d3ee;
+  --radius:16px; --shadow:0 8px 30px rgba(2,8,23,.08);
+  --maxw:1120px; --gap:1rem;
+}
+
+/* Base y accesibilidad */
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg);line-height:1.6}
+:focus-visible{outline:3px solid var(--ring);outline-offset:2px;border-radius:6px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* Utilidades */
+.container{width:min(100% - 2rem,var(--maxw));margin-inline:auto}
+.section{padding:4rem 0}
+.title{font-size:clamp(1.6rem,1.2rem + 2vw,2.2rem);margin:0 0 1rem}
+.lead{font-size:1.125rem;color:var(--muted);margin:0 0 1.5rem}
+.grid{display:grid;gap:var(--gap)}
+.grid-3{grid-template-columns:1fr}
+@media(min-width:700px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.1rem;border-radius:999px;border:0;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;box-shadow:var(--shadow);cursor:pointer}
+.btn:hover{filter:brightness(.95)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid #cbd5e1}
+
+/* Encabezado + menú */
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;background:#fff;border-radius:8px;box-shadow:var(--shadow);z-index:10000}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(15,23,42,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text);font-weight:800;letter-spacing:.2px}
+.logo{width:28px;height:28px}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:.5rem;border-radius:8px}
+.menu{display:flex;align-items:center;gap:.6rem}
+.menu a{color:var(--text);text-decoration:none;font-weight:600;padding:.5rem .75rem;border-radius:8px}
+.menu a:is(:hover,:focus-visible){background:rgba(2,8,23,.06)}
+@media(max-width:800px){
+  .menu-btn{display:inline-flex}
+  .menu{position:fixed;inset:auto 0 0 0;top:64px;background:#fff;border-top:1px solid rgba(15,23,42,.06);flex-direction:column;align-items:stretch;padding:1rem;transform:translateY(2%);opacity:0;pointer-events:none;transition:.2s ease;box-shadow:0 -10px 30px rgba(0,0,0,.06)}
+  .menu.show{transform:translateY(0);opacity:1;pointer-events:auto}
+}
+
+/* Hero (opcional con vídeo) */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;color:#fff;isolation:isolate}
+.hero__media{position:absolute;inset:0;z-index:-2;overflow:hidden;background:#0b1220}
+.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero__overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,rgba(2,6,23,.35),rgba(2,6,23,.7) 60%,rgba(2,6,23,.85))}
+.hero__content{text-align:center;padding:6rem 1rem 5rem}
+.hero h1{font-size:clamp(1.8rem,1.3rem + 3vw,3rem);line-height:1.15;margin:0 0 1rem;text-wrap:balance}
+.hero p{margin:.25rem 0 2rem;color:#e2e8f0}
+
+/* Badges de confianza */
+.badges{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+.badge{background:#e2f7f3;color:#064e3b;border:1px solid #a7f3d0;padding:.45rem .7rem;border-radius:999px;font-weight:700}
+
+/* Servicios */
+.service-card h3{margin:.2rem 0 .4rem}
+.service-card ul{margin:.4rem 0 0 1.1rem}
+
+/* Blog / derechos */
+.post-card img{width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:.6rem;background:#e2e8f0}
+.post-meta{font-size:.9rem;color:var(--muted)}
+.posts-grid{display:grid;gap:var(--gap);grid-template-columns:1fr}
+@media(min-width:800px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
+.search{display:flex;gap:.5rem;margin:.5rem 0 1rem}
+.search input, .search select{padding:.7rem .8rem;border-radius:10px;border:1px solid #cbd5e1;background:#fff}
+
+/* Slider de testimonios */
+.slider{position:relative}
+.slider-viewport{overflow:hidden;border-radius:var(--radius)}
+.slider-track{display:flex;gap:var(--gap);padding:.25rem;will-change:transform;transition:transform .35s ease}
+.slide{flex:0 0 auto;width:100%}
+:root{--itemsPerView:1}
+@media(min-width:640px){:root{--itemsPerView:2}}
+@media(min-width:1024px){:root{--itemsPerView:4}}
+.slide{width:calc((100% - (var(--itemsPerView) - 1)*var(--gap))/var(--itemsPerView))}
+.slider-controls{display:flex;justify-content:center;gap:.5rem;margin-top:.75rem}
+.icon-btn{background:#fff;border:1px solid #cbd5e1;color:var(--text);padding:.5rem .7rem;border-radius:10px;cursor:pointer;box-shadow:var(--shadow)}
+.icon-btn:hover{background:#f1f5f9}
+
+/* Formulario */
+form{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem;display:grid;gap:.9rem}
+.field{display:grid;gap:.35rem}
+label{font-weight:600}
+input,textarea{width:100%;padding:.8rem .9rem;border-radius:10px;border:1px solid #cbd5e1;background:#fff;color:var(--text);font:inherit}
+input:focus-visible,textarea:focus-visible{outline:3px solid var(--ring);border-color:transparent}
+.error{color:#b91c1c;font-size:.95rem;display:none}
+.error[aria-hidden="false"]{display:block}
+.actions-inline{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+
+/* Footer + snackbar */
+footer{border-top:1px solid rgba(15,23,42,.06);padding:2rem 0;text-align:center;color:var(--muted)}
+.footer-wrap{display:flex;flex-direction:column;gap:1rem;align-items:center}
+.snackbar{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%) translateY(16px);background:#0f766e;color:#fff;padding:.85rem 1rem;border-radius:10px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;z-index:9999}
+.snackbar[data-show="true"]{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Hero simple (derechos, servicios, quien-soy, contacto) */
+.hero--simple{min-height:unset;padding:4.5rem 0 2rem;background:linear-gradient(180deg,#0b1220,#0b1220 60%,#0b1220 60%,transparent 60%);color:#fff}
+
+/* Menos movimiento */
+@media (prefers-reduced-motion: reduce){
+  .hero__video{display:none}.hero__overlay{background:rgba(2,6,23,.85)}
+  .snackbar,.btn,.slider-track{transition:none!important}
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Contacto · BT SERVICIOS LEGALES</title>
+  <meta name="description" content="Escríbenos y conversemos sobre tu caso."/>
+  <meta property="og:type" content="website"/><meta property="og:title" content="Contacto · BT"/>
+  <meta property="og:description" content="Agenda tu consulta."/><meta property="og:image" content="img/og-placeholder.jpg"/>
+  <link rel="icon" href="favicon.svg"/><link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header role="banner" aria-label="Barra de navegación">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+  <img src="img/serlex-logo.svg" alt="SERLEX Servicios Legales" class="logo" style="height:28px;width:auto"/>
+  SERLEX SERVICIOS LEGALES
+</a>
+
+      <button class="menu-btn" id="menuBtn" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      <nav id="menu" class="menu" aria-label="Navegación">
+        <a href="index.html#top">Inicio</a><a href="servicios.html">Servicios</a><a href="derechos.html">Conoce tus derechos</a><a href="quien-soy.html">¿Quién soy?</a><a href="contacto.html">Contacto</a>
+        <a class="btn js-wa-link" href="#" target="_blank" rel="noopener">CONSULTA</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero--simple" aria-label="Portada contacto">
+    <div class="container">
+      <h1>Contacto</h1>
+      <p class="lead">Conversemos y diseñemos un plan claro.</p>
+    </div>
+  </section>
+
+  <main id="main" class="container" tabindex="-1">
+    <section class="grid" style="grid-template-columns:1fr;gap:2rem" aria-label="Formulario y datos">
+      <article class="card">
+        <h2>Escríbeme</h2>
+        <form id="contactForm" novalidate aria-describedby="form-help">
+          <p id="form-help" class="sr-only" aria-hidden="true">Todos los campos son obligatorios.</p>
+          <div class="field">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="err-name"/>
+            <span id="err-name" class="error" role="alert" aria-hidden="true">Ingresa tu nombre.</span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="err-email"/>
+            <span id="err-email" class="error" role="alert" aria-hidden="true">Ingresa un email válido.</span>
+          </div>
+          <div class="field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" required aria-describedby="err-message"></textarea>
+            <span id="err-message" class="error" role="alert" aria-hidden="true">Cuéntame brevemente tu consulta.</span>
+          </div>
+          <div class="actions-inline">
+            <button type="submit" class="btn">Enviar</button>
+            <a class="btn js-wa-link" href="#" target="_blank" rel="noopener">CONSULTA</a>
+          </div>
+        </form>
+      </article>
+
+      <article class="card">
+        <h2>Datos de contacto</h2>
+        <p><strong>WhatsApp:</strong> <a class="js-wa-link" href="#" target="_blank" rel="noopener">+56 9 5094 4482</a></p>
+        <p><strong>Email:</strong> <a href="mailto:contacto@btlegales.cl">contacto@btlegales.cl</a></p>
+        <p><strong>Ciudad:</strong> Santiago (CL)</p>
+        <img loading="lazy" src="img/mapa-placeholder.jpg" alt="Mapa de referencia (placeholder)" style="width:100%;height:220px;object-fit:cover;border-radius:12px;background:#e2e8f0"/>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-wrap">
+      <small>© <span id="year"></span> BT SERVICIOS LEGALES · WhatsApp +56 9 5094 4482 · contacto@btlegales.cl · Santiago</small>
+    </div>
+  </footer>
+
+  <div id="snackbar" class="snackbar" role="status" aria-live="polite" aria-atomic="true">Mensaje enviado ✅</div>
+  <script src="js/script.js"></script>
+</body>
+</html>

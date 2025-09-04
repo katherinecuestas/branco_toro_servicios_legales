@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>BT SERVICIOS LEGALES · Conoce tus derechos</title>
+  <meta name="description" content="Guías prácticas y artículos introductorios sobre derechos laborales y civiles."/>
+  <meta property="og:type" content="website"/><meta property="og:title" content="Conoce tus derechos · BT"/>
+  <meta property="og:description" content="Artículos claros y prácticos."/><meta property="og:image" content="img/og-placeholder.jpg"/>
+  <link rel="icon" href="favicon.svg"/><link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header role="banner" aria-label="Barra de navegación">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+  <img src="img/serlex-logo.svg" alt="SERLEX Servicios Legales" class="logo" style="height:28px;width:auto"/>
+  SERLEX SERVICIOS LEGALES
+</a>
+
+      <button class="menu-btn" id="menuBtn" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      <nav id="menu" class="menu" aria-label="Navegación">
+        <a href="index.html#top">Inicio</a><a href="servicios.html">Servicios</a><a href="derechos.html">Conoce tus derechos</a><a href="quien-soy.html">¿Quién soy?</a><a href="contacto.html">Contacto</a>
+        <a class="btn js-wa-link" href="#" target="_blank" rel="noopener">CONSULTA</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero--simple" aria-label="Portada derechos">
+    <div class="container">
+      <h1>Conoce tus derechos</h1>
+      <p class="lead">Artículos breves y didácticos (no constituyen asesoría legal).</p>
+    </div>
+  </section>
+
+  <main id="main" class="container" tabindex="-1">
+    <div class="search" role="search">
+      <input id="q" type="search" placeholder="Buscar por título..." aria-label="Buscar artículos"/>
+      <select id="cat" aria-label="Filtrar por categoría">
+        <option value="todas">Todas las categorías</option>
+        <option value="laboral">Laboral</option>
+        <option value="civil">Civil</option>
+        <option value="penal">Penal</option>
+      </select>
+    </div>
+
+    <section id="postsWrap" class="posts-grid" aria-label="Listado de artículos">
+      <!-- 6+ Cards demo -->
+      <article class="card post-card" data-cat="laboral">
+        <img loading="lazy" src="img/ph-1.jpg" alt="Ilustración"/>
+        <div class="post-meta">Laboral · 12 Ago 2025</div>
+        <h3>Honorarios vs relación laboral</h3>
+        <p>Señales de subordinación/dependencia para evaluar judicialización.</p>
+        <a class="btn-ghost" href="articulo.html">Leer más</a>
+      </article>
+      <article class="card post-card" data-cat="laboral">
+        <img loading="lazy" src="img/ph-2.jpg" alt="Ilustración"/>
+        <div class="post-meta">Laboral · 05 Ago 2025</div>
+        <h3>Ley 40 horas: hitos y plazos</h3>
+        <p>Qué cambió y cómo afecta la jornada y horas extra.</p>
+        <a class="btn-ghost" href="articulo.html">Leer más</a>
+      </article>
+      <article class="card post-card" data-cat="laboral">
+        <img loading="lazy" src="img/ph-3.jpg" alt="Ilustración"/>
+        <div class="post-meta">Laboral · 28 Jul 2025</div>
+        <h3>Garantía de indemnidad</h3>
+        <p>Protección frente a represalias por reclamar derechos.</p>
+        <a class="btn-ghost" href="articulo.html">Leer más</a>
+      </article>
+      <article class="card post-card" data-cat="civil">
+        <img loading="lazy" src="img/ph-4.jpg" alt="Ilustración"/>
+        <div class="post-meta">Civil · 20 Jul 2025</div>
+        <h3>Indemnización de perjuicios</h3>
+        <p>Elementos y pruebas clave para una acción exitosa.</p>
+        <a class="btn-ghost" href="articulo.html">Leer más</a>
+      </article>
+      <article class="card post-card" data-cat="penal">
+        <img loading="lazy" src="img/ph-5.jpg" alt="Ilustración"/>
+        <div class="post-meta">Penal · 10 Jul 2025</div>
+        <h3>Derechos del imputado</h3>
+        <p>Qué puedes exigir desde la primera diligencia.</p>
+        <a class="btn-ghost" href="articulo.html">Leer más</a>
+      </article>
+      <article class="card post-card" data-cat="civil">
+        <img loading="lazy" src="img/ph-6.jpg" alt="Ilustración"/>
+        <div class="post-meta">Civil · 02 Jul 2025</div>
+        <h3>Cláusulas abusivas</h3>
+        <p>Cómo detectarlas y pasos para defenderte.</p>
+        <a class="btn-ghost" href="articulo.html">Leer más</a>
+      </article>
+    </section>
+
+    <section class="section" aria-label="CTA">
+      <div class="card" style="text-align:center">
+        <h3 class="title">¿Tienes un caso específico?</h3>
+        <p class="lead">Escríbeme y vemos pasos concretos.</p>
+        <a class="btn js-wa-link" href="#" target="_blank" rel="noopener">CONSULTA por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-wrap">
+      <small>© <span id="year"></span> BT SERVICIOS LEGALES · WhatsApp +56 9 5094 4482 · contacto@btlegales.cl · Santiago</small>
+    </div>
+  </footer>
+
+  <div id="snackbar" class="snackbar" role="status" aria-live="polite" aria-atomic="true">Mensaje enviado ✅</div>
+  <script src="js/script.js"></script>
+</body>
+</html>
